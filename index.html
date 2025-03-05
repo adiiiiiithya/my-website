@@ -7,7 +7,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
+    <h1>welcome!</h1>
     <p>My name is Adithya Madhu, an aspiring graduate of MSRUAS and this is my personal showcase, a romanticization of my life. est 2004</p>
+
+    <!-- Button to trigger click event -->
+    <button id="clickButton">Click Me!</button>
+    
+    <!-- Paragraph to display click count -->
+    <p id="clickCounter">Click Count: 0</p>
+
+    <script>
+        // Initialize click counter
+        let clickCount = 0;
+
+        // Get elements
+        const clickButton = document.getElementById("clickButton");
+        const clickCounter = document.getElementById("clickCounter");
+
+        // Function to update click count and change color every 5 clicks
+        clickButton.addEventListener("click", function() {
+            clickCount++;
+            clickCounter.textContent = "Click Count: " + clickCount;
+
+            // Change color every 5 clicks
+            if (clickCount % 5 === 0) {
+                document.body.style.backgroundColor = getRandomColor();
+            }
+        });
+
+        // Function to generate a random color
+        function getRandomColor() {
+            const letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
 </body>
 </html>
