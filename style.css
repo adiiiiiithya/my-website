@@ -42,4 +42,8 @@ p {
     margin-top: 20px; /* Space above the counter */
     font-weight: bold; /* Make the counter text bold */
 }
-
+#randomImage {
+    display: block;
+    margin: 20px auto; /* Centers horizontally */
+    width: 300px; /* Adjust as needed */
+}
