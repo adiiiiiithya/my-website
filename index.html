@@ -15,15 +15,26 @@
     
     <!-- Paragraph to display click count -->
     <p id="clickCounter">Click Count: 0</p>
-    
+
+    <!-- Image container (hidden initially) -->
+    <img id="randomImage" src="" alt="Random Image" style="display: none; width: 300px; margin-top: 20px;">
 
     <script>
         // Initialize click counter
         let clickCount = 0;
 
+        // Single image for now
+        const images = [
+            "gohan.jpg"  // Add more images here once you upload them to GitHub
+        ];
+
+        // GitHub raw URL (Replace 'your-github-username' and 'your-repo-name' with actual values)
+        const baseURL = "https://raw.githubusercontent.com/your-github-username/your-repo-name/main/images/";
+
         // Get elements
         const clickButton = document.getElementById("clickButton");
         const clickCounter = document.getElementById("clickCounter");
+        const randomImage = document.getElementById("randomImage");
 
         // Function to update click count and change color every 5 clicks
         clickButton.addEventListener("click", function() {
@@ -33,6 +44,10 @@
             // Change color every 5 clicks
             if (clickCount % 5 === 0) {
                 document.body.style.backgroundColor = getRandomColor();
+
+                // Display the image (for now, it's just "gohan.jpg")
+                randomImage.src = baseURL + images[0]; 
+                randomImage.style.display = "block";
             }
         });
 
